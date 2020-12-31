@@ -1,0 +1,82 @@
+﻿@model FamilyTasks.Models.Task
+@{
+    ViewData["Title"] = "Create Task";
+}
+<style>
+    .input-group-text {
+        background-color: #ffffff !important;
+    }
+    .task-border-left {
+        border-left: 0px;
+    }
+    .task-border-right {
+        border-right: 0px;
+    }
+</style>
+<div class="col-lg-9">
+    <form asp-action="CreateTask" asp-controller="Task">
+        <div class="row">
+            <div class="col-lg-7 form-group">
+                <input type="text" asp-for="Subject" name="Subject" id="Subject" class="form-control" placeholder="Enter New Task" required />
+            </div>
+            <div class="col-lg-3">
+                <button type="submit" class="btn btn-danger px-4 ml-4" id="add-btn">Add</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        @foreach (var item in ViewData["TaskDetail"] as IEnumerable<FamilyTasks.Models.Task>)
+        {
+            <div class="col-lg-9">
+                <div class="input-group mb-3">
+                    @if (item.IsComplete == true)
+                    {
+                        <div class="input-group-append">
+                            <span class="input-group-text task-border-right"><input checked type="checkbox" name="IsComplete" id="IsComplete" value="@item.Id" asp-for="IsComplete" class="preview" /></span>
+                        </div>
+                        <input style="text-decoration: line-through;" type="text" class="form-control task-border-left task-border-right" value="@item.Subject">
+                    }
+                    else
+                    {
+                        <div class="input-group-append">
+                            <span class="input-group-text task-border-right"><input type="checkbox" name="IsComplete" id="@string.Format("IsComplete_{0}",item.Id)" value="@item.Id" asp-for="IsComplete" class="preview" /></span>
+                        </div>
+                        <input type="text" class="form-control task-border-left task-border-right" value="@item.Subject">
+                    }
+                    @if (item.AssignedMemberId != null)
+                    {
+                        <div class="input-group-append">
+                            <span class="input-group-text py-0"> <label class="label" for="@item.AssignedMember.Avatar"><span class="@item.AssignedMember.Avatar span mt-1 ml-3"></span></label></span>
+                        </div>
+                    }
+                    <div class="input-group-append">
+                        <span class="input-group-text task-border-left"><a asp-action="DeleteTask" asp-controller="Task" asp-route-id="@item.Id"><i class="fa fa-trash" title="Delete"></i></a></span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts{
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.preview').change(function () {
+            var taskId = $(this).val();
+            $.ajax({
+                url: '@Url.Action("ToggleCompleteStatus", "Task")',
+                data: { taskId: taskId },
+                type: 'POST'
+            }).done(function (result) {
+                setTimeout(function () {
+                    location.reload();
+                }, 10);
+            });
+        });
+    });
+</script>
+

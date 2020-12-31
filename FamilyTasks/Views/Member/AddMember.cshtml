@@ -1,0 +1,78 @@
+﻿
+@model FamilyTasks.Models.Member
+@{
+    ViewBag.Title= "Add Member";
+}
+<div class="col-lg-9">
+    <h3>
+        Add Family Member
+    </h3>
+    <form asp-action="AddMember" asp-controller="Member">
+        <span asp-validation-summary="all" class="text-danger"></span>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="col-md-6">First Name</label>
+                    <input type="text" class="form-control" asp-for="FirstName" required>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="col-md-6">Last Name</label>
+                    <input type="text" class="form-control" asp-for="LastName">
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label class="col-md-6">Email Address</label>
+                    <input type="email" class="form-control" asp-for="EmailAddress" required>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label class="col-md-6">Roles</label>
+                    <input type="text" class="form-control" asp-for="Roles" required>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label class="col-md-12">Select Avatar</label>
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="red" value="red" required/>
+                            <label class="label" for="red"><span class="red span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="olive" value="olive" />
+                            <label class="label" for="olive"><span class="olive span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="yellow" value="yellow" />
+                            <label class="label" for="yellow"><span class="yellow span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="green" value="green" />
+                            <label class="label" for="green"><span class="green span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="lightblue" value="lightblue" />
+                            <label class="label" for="lightblue"><span class="lightblue span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="blue" value="blue" />
+                            <label class="label" for="blue"><span class="blue span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="pink" value="pink" />
+                            <label class="label" for="pink"><span class="pink span"></span></label>
+
+                            <input type="radio" name="Avatar" asp-for="Avatar" id="brown" value="brown" />
+                            <label class="label" for="brown"><span class="brown span"></span></label>
+                        </div>
+                    </div>  
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-danger px-4 mt-3">Add</button>
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+
+ }

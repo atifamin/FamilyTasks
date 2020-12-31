@@ -1,0 +1,17 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{ dynamic taskId = null;}
+<nav id="sidebar" style=" background: #f2f2f2;">
+    <ul class="list-unstyled CTAs">
+        <li>
+            <a type="button" href="@Url.Action("CreateTask","Task",new { id=taskId})" class="btn btn-light custom" style="border:1px">Add Task</a>
+        </li>
+        <partial name="_MembersPartialView" />
+        <li>
+            <a type="button" asp-action="AddMember" asp-controller="Member" class="btn btn-light custom" style="border:1px dashed">+ Add Member</a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = null;
+}
+
+    @foreach (var item in ViewBag.Members as IEnumerable<Member>)
+    {
+        <li>
+            <a href="@Url.Action("CreateTask","Task",new { id=item.Id})" class="download text-left pt-0">
+                <label class="label" for="@item.Avatar"><span class="@item.Avatar span mt-3"></span></label>
+                @item.FirstName
+            </a>
+        </li>
+    }
+
+

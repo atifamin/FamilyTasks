@@ -1,0 +1,172 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/*this datalist form radion-color-buttons*/
+
+/*this datalist form radion-color-buttons*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+/*this datalist form radion-color-buttons*/
+
+input[type="radio"] {
+    display: none;
+    border-radius:.5rem
+}
+label span {
+    border-radius: 2.5rem;
+}
+    input[type="radio"]:checked + label span {
+        transform: scale(1.25);
+    }
+
+    input[type="radio"]:checked + label .red {
+        border: 2px solid #711313;
+    }
+
+    input[type="radio"]:checked + label .olive {
+        border: 2px solid #cb9110;
+    }
+
+    input[type="radio"]:checked + label .yellow {
+        border: 2px solid #816102;
+    }
+
+    input[type="radio"]:checked + label .green {
+        border: 2px solid #0e4e1d;
+    }
+
+    input[type="radio"]:checked + label .lightblue {
+        border: 2px solid #12b9b2;
+    }
+
+    input[type="radio"]:checked + label .blue {
+        border: 2px solid #103f62;
+    }
+
+    input[type="radio"]:checked + label .pink {
+        border: 2px solid #b22875;
+    }
+
+    input[type="radio"]:checked + label .brown {
+        border: 2px solid #5f371e;
+    }
+
+label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+    label:hover span {
+        transform: scale(1.25);
+    }
+
+    label span {
+        display: block;
+        width: 90%;
+        height: 90%;
+        transition: transform 0.2s ease-in-out;
+    }
+
+        label span.red {
+            background: #db2828;
+        }
+
+        label span.olive {
+            background: #f3c867;
+        }
+
+        label span.yellow {
+            background: #fbbd08;
+        }
+
+        label span.green {
+            background: #21ba45;
+        }
+
+        label span.lightblue {
+            background: #5befe9;
+        }
+
+        label span.blue {
+            background: #2185d0;
+        }
+
+        label span.pink {
+            background: #e178b3;
+        }
+
+        label span.brown {
+            background: #c0703c;
+        }
+ 
